@@ -25,7 +25,7 @@ wechatpush.push_text(openid,message)
 
 ​     发送消息
 
-wechatpush.push_textcard(templateid,openid,message)
+wechatpush.push_textcard(templateid,openid,message,url)
 
 ​    发送模板消息，message必须为符合模板的json格式，url一项选填
 
