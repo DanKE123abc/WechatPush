@@ -1,6 +1,6 @@
 # WechatPush
 
-![Language](https://img.shields.io/badge/Language-Python-yellow)![LICENSE](https://img.shields.io/badge/LICENSE-MIT-red)![Author](https://img.shields.io/badge/Author-DanKe-blue)![Language](https://img.shields.io/badge/Version-0.1.0[beta]-grenn)
+![Language](https://img.shields.io/badge/Language-Python-yellow)![LICENSE](https://img.shields.io/badge/LICENSE-MIT-red)![Author](https://img.shields.io/badge/Author-DanKe-blue)![Version](https://img.shields.io/badge/Version-0.1.1[beta]-grenn)
 
 Python微信公众号/订阅号/测试号推送库
 
@@ -27,7 +27,7 @@ wechatpush.push_text(openid,message)
 
 wechatpush.push_textcard(templateid,openid,message)
 
-​    发送模板消息，message必须为符合模板的json格式
+​    发送模板消息，message必须为符合模板的json格式，url一项选填
 
 微信官方文档：https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html
 

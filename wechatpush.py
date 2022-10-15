@@ -4,7 +4,7 @@ import os
 
 #Another: DanKe
 
-version = "0.1.0"
+version = "0.1.1"
 
 def checksetting():
     try:
@@ -38,12 +38,12 @@ def push_text(openid,message):#微信推送
     result = response.json()
     print(result)
 
-def push_textcard(templateid,openid,message):#微信推送
+def push_textcard(templateid,openid,message,url=""):#微信推送
     access_token = AccessToken().get_access_token()
     body = {
         "touser":openid,
         "template_id":templateid,
-        "url":"http://weixin.qq.com/download",
+        "url":url,
         "topcolor":"#FF0000",
         "data": message
     }
@@ -99,8 +99,8 @@ def help():
     print("引用方法：")
     print("    wechatpush.push_text(openid,message)")
     print("        发送消息")
-    print("    wechatpush.push_textcard(templateid,openid,message)")
-    print("        发送模板消息，message必须为符合模板的json格式")
+    print("    wechatpush.push_textcard(templateid,openid,message,url)")
+    print("        发送模板消息，message必须为符合模板的json格式，url一项选填")
     print("微信官方文档：https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html")
     print("-------------------------------------------------------------------------")
 
