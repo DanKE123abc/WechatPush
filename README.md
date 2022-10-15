@@ -1,6 +1,6 @@
 # WechatPush
 
-![Language](https://img.shields.io/badge/Language-Python-yellow)![LICENSE](https://img.shields.io/badge/LICENSE-GPL--3.0-red)![Author](https://img.shields.io/badge/Author-DanKe-blue)![Language](https://img.shields.io/badge/Version-0.1.0[beta]-grenn)
+![Language](https://img.shields.io/badge/Language-Python-yellow)![LICENSE](https://img.shields.io/badge/LICENSE-MIT-red)![Author](https://img.shields.io/badge/Author-DanKe-blue)![Language](https://img.shields.io/badge/Version-0.1.0[beta]-grenn)
 
 Python微信公众号/订阅号/测试号推送库
 
