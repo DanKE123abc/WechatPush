@@ -33,7 +33,7 @@ wechatpush.push_textcard(templateid,openid,message,url)
 
 wechatpush.push_url(openid,url,label,message)
 
-    发送带链接的消息，message可以不填
+​    发送带链接的消息，message可以不填
 
 微信官方文档：https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html
 
