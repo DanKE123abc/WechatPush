@@ -4,7 +4,7 @@ import os
 
 #Another: DanKe
 
-version = "0.1.1"
+version = "0.1.2"
 
 def checksetting():
     try:
@@ -57,6 +57,28 @@ def push_textcard(templateid,openid,message,url=""):#微信推送
     result = response.json()
     print(result)
 
+def push_url(openid, url="https://weixin.qq.com/",label="点击查看链接",message=""):#微信推送
+    access_token = AccessToken().get_access_token()
+    if message=="":
+        msg = message + "<a href='"+ url +"'>"+label+"</a>"
+    else:
+        msg = message +"\n"+ "<a href='"+ url +"'>"+label+"</a>"
+    body = {
+        "touser": openid,
+        "msgtype": "text",
+        "text": {
+            "content": msg
+        }
+    }
+    response = requests.post(
+        url="https://api.weixin.qq.com/cgi-bin/message/custom/send",
+        params={
+            'access_token': access_token
+        },
+        data=bytes(json.dumps(body, ensure_ascii=False), encoding='utf-8')
+    )
+    result = response.json()
+    print(result)
 
 class AccessToken(object):
     checksetting()
