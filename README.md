@@ -32,6 +32,7 @@ wechatpush.push_textcard(templateid,openid,message,url)
 ​    发送模板消息，message必须为符合模板的json格式，url一项选填
 
 wechatpush.push_url(openid,url,label,message)
+
     发送带链接的消息，message可以不填
 
 微信官方文档：https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html
