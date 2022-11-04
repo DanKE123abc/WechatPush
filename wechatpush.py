@@ -4,7 +4,10 @@ import os
 
 #Another: DanKe
 
-version = "0.1.2"
+version = "0.1.4"
+
+def version():
+    print("WechatPush " + version)
 
 def checksetting():
     try:
@@ -19,7 +22,7 @@ def checksetting():
             print("setting.py is created. Please re run it after configuration")
             exit()
 
-def push_text(openid,message):#微信推送
+def push_text(openid,message):
     access_token = AccessToken().get_access_token()
     body = {
         "touser": openid,
@@ -38,7 +41,7 @@ def push_text(openid,message):#微信推送
     result = response.json()
     print(result)
 
-def push_textcard(templateid,openid,message,url=""):#微信推送
+def push_textcard(templateid,openid,message,url=""):
     access_token = AccessToken().get_access_token()
     body = {
         "touser":openid,
@@ -80,6 +83,13 @@ def push_url(openid, url="https://weixin.qq.com/",label="点击查看链接",mes
     result = response.json()
     print(result)
 
+def push_voice(openid,message,person=0,volume=2):
+    msg = message
+    seconds = int(len(msg)/4)
+    if seconds <= 60:
+        url = "https://tts.baidu.com/text2audio?tex="+msg+"&cuid=baike&lan=ZH&ie=utf-8&ctp=1&pdt=301&vol="+str(volume)+"&rate=32&per="+str(person)
+        push_url(openid,url,label='◁ '+ str(seconds) + '" ' + " "*seconds)
+
 class AccessToken(object):
     checksetting()
     try:
@@ -112,19 +122,9 @@ def help():
     print("  \__/\  /  \___  >\___  >___|  (____  /__| |____|   |____//____  >___|  /")
     print("       \/       \/     \/     \/     \/                         \/     \/ ")
     print("Python微信公众号/订阅号/测试号推送库")
-    print("Github: https://github.com/DanKE123abc/WechatPush")
+    print("Website: http://WechatPush.DanKe.ml")
+    print("Github: http://github.com/DanKE123abc/WechatPush")
     print("Another: DanKe (http://github.com/DanKE123abc)")
     print("LICENSE: MIT")
-    print("-------------------------------------------------------------------------")
-    print("setting.py")
-    print("        自动生成，需要填入appid与appsecret")
-    print("引用方法：")
-    print("    wechatpush.push_text(openid,message)")
-    print("        发送消息")
-    print("    wechatpush.push_textcard(templateid,openid,message,url)")
-    print("        发送模板消息，message必须为符合模板的json格式，url一项选填")
-    print("微信官方文档：https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html")
-    print("-------------------------------------------------------------------------")
-
 if __name__ == '__main__':
     help()
