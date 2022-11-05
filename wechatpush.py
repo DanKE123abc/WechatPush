@@ -4,10 +4,10 @@ import os
 
 #Another: DanKe
 
-version = "0.1.4"
+__version__ = "0.1.5"
 
 def version():
-    print("WechatPush " + version)
+    print("WechatPush " + __version__)
 
 def checksetting():
     try:
@@ -114,7 +114,7 @@ class AccessToken(object):
             print(result)
 
 def help():
-    print("Hello WechatPush"+version+" !")
+    print("Hello WechatPush"+__version__+" !")
     print(" __      __              .__            __ __________             .__   ")         
     print("/  \    /  \ ____   ____ |  |__ _____ _/  |\______   \__ __  _____|  |__  ")
     print("\   \/\/   // __ \_/ ___\|  |  \\\\__  \\\\   __\     ___/  |  \/  ___/  |  \ ")
@@ -126,5 +126,9 @@ def help():
     print("Github: http://github.com/DanKE123abc/WechatPush")
     print("Another: DanKe (http://github.com/DanKE123abc)")
     print("LICENSE: MIT")
+
+def main():
+  help()
+
 if __name__ == '__main__':
-    help()
+    main()
